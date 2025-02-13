@@ -10,17 +10,19 @@
     scroll-behavior: smooth;
 }
 
-/* Meniu de navigare minimalist */
+/* Navbar */
 .navbar {
     position: fixed;
     top: 0;
     width: 100%;
-    background: rgba(0, 0, 0, 0.9); /* Fundal negru */
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
     padding: 15px 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     z-index: 1000;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .navbar .logo {
@@ -47,13 +49,13 @@
 }
 
 .navbar ul li a:hover {
-    color: #007bff; /* Albastru pe hover */
+    color: #007bff;
 }
 
-/* Secțiunea Hero cu fundal negru și text vizibil */
+/* Hero Section */
 .hero {
     height: 100vh;
-    background: black;
+    background: linear-gradient(135deg, #000000, #0a0a0a, #001F3F);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -64,7 +66,7 @@
     padding: 20px;
 }
 
-/* Stil pentru "Welcome!" */
+/* Stil pentru Welcome */
 .title {
     font-size: 4rem;
     font-weight: 700;
@@ -73,70 +75,36 @@
     letter-spacing: 3px;
     color: white;
     text-shadow: 3px 3px 15px rgba(255, 255, 255, 0.6), 2px 2px 20px rgba(0, 123, 255, 0.5);
-    animation: fadeIn 1.5s ease-in-out;
+    animation: fadeIn 1.5s ease-in-out forwards;
 }
 
-/* Umbră pe text */
-.hero p {
-    font-size: 1.2rem;
-    opacity: 0.9;
-}
-
-/* Buton minimalist cu efect albastru */
-.btn {
-    display: inline-block;
-    padding: 12px 24px;
-    background: white;
-    color: black;
-    text-decoration: none;
-    font-size: 1.2rem;
-    border-radius: 50px;
-    transition: all 0.3s ease-in-out;
-    margin-top: 20px;
-    border: 2px solid black;
-    font-weight: bold;
-}
-
-/* Efect hover pe buton */
-.btn:hover {
-    background: #007bff;
-    color: white;
-    border: 2px solid #007bff;
-    transform: scale(1.1);
-}
-
-/* Secțiuni albe cu text negru */
+/* Efect fix pentru secțiuni */
 .about, .contact {
-    padding: 80px 20px;
+    padding: 100px 20px;
     text-align: center;
-    background: #f1f1f1; /* Gri deschis */
-    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-    border-bottom: none; /* Eliminăm linia neagră */
+    background: #f1f1f1;
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+    opacity: 1; /* Nu mai este ascuns */
+    transform: translateY(0);
 }
 
-/* Titlurile secțiunilor */
+/* Titluri */
 .about h2, .contact h2 {
-    font-size: 2rem;
+    font-size: 2.5rem;
     color: black;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
     font-weight: 700;
 }
 
-/* Efect hover îmbunătățit - fără linia neagră */
-.about:hover, .contact:hover {
-    transform: scale(1.01);
-    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1); /* Adăugăm o umbră subtilă */
-}
-
 /* Formular Contact */
-form {
+.contact form {
     display: flex;
     flex-direction: column;
     max-width: 400px;
     margin: 0 auto;
 }
 
-input, textarea {
+.contact input, .contact textarea {
     width: 100%;
     padding: 12px;
     margin: 10px 0;
@@ -145,51 +113,27 @@ input, textarea {
     font-size: 1rem;
 }
 
-textarea {
-    height: 120px;
-}
-
-/* Efect hover pe input */
-input:focus, textarea:focus {
-    border-color: #007bff;
-    outline: none;
-    box-shadow: 0 0 8px rgba(0, 123, 255, 0.5);
-}
-
-/* Mesaj de confirmare */
-.hidden {
-    display: none;
+/* Buton */
+.contact button {
+    width: 100%;
+    padding: 12px;
+    background: #007bff;
+    color: white;
+    font-size: 1.2rem;
     font-weight: bold;
+    border: none;
+    border-radius: 5px;
     margin-top: 10px;
-    color: green;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
 }
 
-/* Animație fade-in */
+.contact button:hover {
+    background: #0056b3;
+}
+
+/* Efect fix pentru apariția elementelor */
 @keyframes fadeIn {
     from { opacity: 0; transform: translateY(20px); }
     to { opacity: 1; transform: translateY(0); }
-}
-
-.fade-in {
-    opacity: 0;
-    transition: opacity 1s ease-in-out, transform 1s ease-in-out;
-}
-
-/* Responsivitate */
-@media (max-width: 768px) {
-    .hero h1 {
-        font-size: 2.5rem;
-    }
-
-    .hero p {
-        font-size: 1rem;
-    }
-
-    .btn {
-        font-size: 1rem;
-    }
-
-    .navbar ul {
-        display: none;
-    }
 }

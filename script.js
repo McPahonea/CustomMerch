@@ -1,22 +1,24 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const fadeElements = document.querySelectorAll('.fade-in');
+    const sections = document.querySelectorAll('.about, .contact');
 
-    const appearOnScroll = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.style.opacity = 1;
-                entry.target.style.transform = "translateY(0)";
-                observer.unobserve(entry.target);
-            }
-        });
-    }, { threshold: 0.3 });
+    // Asigurăm că secțiunile rămân vizibile
+    sections.forEach(section => {
+        section.style.opacity = "1";
+        section.style.transform = "translateY(0)";
+    });
 
-    fadeElements.forEach(el => appearOnScroll.observe(el));
+    // Activează/dezactivează butonul "Send"
+    const form = document.getElementById("contactForm");
+    const button = form.querySelector("button");
+    
+    form.addEventListener("input", () => {
+        button.disabled = !form.checkValidity();
+    });
 
-    // Formular Contact
-    document.getElementById("contactForm").addEventListener("submit", function(event) {
+    form.addEventListener("submit", function(event) {
         event.preventDefault();
         document.getElementById("thanksMessage").classList.remove("hidden");
         this.reset();
+        button.disabled = true; // Dezactivează butonul după submit
     });
 });
