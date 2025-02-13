@@ -1,0 +1,195 @@
+/* Import Fonturi Google */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Raleway:wght@300;700&display=swap');
+
+/* Resetare stiluri */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Raleway', sans-serif;
+    scroll-behavior: smooth;
+}
+
+/* Meniu de navigare minimalist */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.9); /* Fundal negru */
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+}
+
+.navbar .logo {
+    color: white;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+}
+
+.navbar ul li {
+    margin: 0 15px;
+}
+
+.navbar ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.3s;
+}
+
+.navbar ul li a:hover {
+    color: #007bff; /* Albastru pe hover */
+}
+
+/* Secțiunea Hero cu fundal negru și text vizibil */
+.hero {
+    height: 100vh;
+    background: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    position: relative;
+    padding: 20px;
+}
+
+/* Stil pentru "Welcome!" */
+.title {
+    font-size: 4rem;
+    font-weight: 700;
+    font-family: 'Playfair Display', serif;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: white;
+    text-shadow: 3px 3px 15px rgba(255, 255, 255, 0.6), 2px 2px 20px rgba(0, 123, 255, 0.5);
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+/* Umbră pe text */
+.hero p {
+    font-size: 1.2rem;
+    opacity: 0.9;
+}
+
+/* Buton minimalist cu efect albastru */
+.btn {
+    display: inline-block;
+    padding: 12px 24px;
+    background: white;
+    color: black;
+    text-decoration: none;
+    font-size: 1.2rem;
+    border-radius: 50px;
+    transition: all 0.3s ease-in-out;
+    margin-top: 20px;
+    border: 2px solid black;
+    font-weight: bold;
+}
+
+/* Efect hover pe buton */
+.btn:hover {
+    background: #007bff;
+    color: white;
+    border: 2px solid #007bff;
+    transform: scale(1.1);
+}
+
+/* Secțiuni albe cu text negru */
+.about, .contact {
+    padding: 80px 20px;
+    text-align: center;
+    background: #f1f1f1; /* Gri deschis */
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    border-bottom: none; /* Eliminăm linia neagră */
+}
+
+/* Titlurile secțiunilor */
+.about h2, .contact h2 {
+    font-size: 2rem;
+    color: black;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+/* Efect hover îmbunătățit - fără linia neagră */
+.about:hover, .contact:hover {
+    transform: scale(1.01);
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1); /* Adăugăm o umbră subtilă */
+}
+
+/* Formular Contact */
+form {
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 2px solid black;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+textarea {
+    height: 120px;
+}
+
+/* Efect hover pe input */
+input:focus, textarea:focus {
+    border-color: #007bff;
+    outline: none;
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.5);
+}
+
+/* Mesaj de confirmare */
+.hidden {
+    display: none;
+    font-weight: bold;
+    margin-top: 10px;
+    color: green;
+}
+
+/* Animație fade-in */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.fade-in {
+    opacity: 0;
+    transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+}
+
+/* Responsivitate */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    .btn {
+        font-size: 1rem;
+    }
+
+    .navbar ul {
+        display: none;
+    }
+}
